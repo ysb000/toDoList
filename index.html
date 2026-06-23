@@ -13,6 +13,23 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-    
+    <div id="wrap">
+        <header>
+            <!-- 1행 로고, 검색, 메뉴 -->
+            <div class="top">
+                <h1><a href="#">To Do</a></h1>
+                <div class="top_r">
+                    <a href="#" class="search_btn"><img src="./images/search_btn.svg" alt="검색하기"></a>
+                    <a href="#" class="all_menu_btn"><img src="./images/all_menu_btn.svg" alt="전체메뉴"></a>
+                </div>
+            </div>
+            <!-- 2행 전체, 오늘 보기 메뉴 그룹으로 사용 가능: div, nav, ul -->
+            <nav>
+                <a href="#" class="all active">ALL<span class="num">(3)</span></a>
+                <a href="#" class="today">Today<span class="num">(0)</span></a>
+            </nav>
+        </header>
+        <main></main>
+    </div><!-- e:#wrap -->
 </body>
 </html>
