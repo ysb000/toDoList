@@ -5,10 +5,13 @@
 /* 부모선택자 > 자식선택자 {속성:값;} */
 /* 형제선택자 + 인접선택자 {속성:값;} */
 /* 형제선택자 ~ 뒤에 모든 형제들 {속성:값;} */
+body {background-color:#f5f5f5;}
 #wrap {
+    position:relative;
     width:402px; /* css 숫자 입력 시 단위작성하기 */
     height:874px;
-    background-color:aqua;
+    background-color:#fff;
+    padding:45px 15px;
     /* 안쪽여백, 피그마 오토레이아웃 패딩과 동일 */
     /* 안쪽여백 패딩을 4방향 각각 넣는 법 */
     /* padding-left:15px;
@@ -18,7 +21,6 @@
     /* 패딩 값 1개 작성 시 -전체 방향 적용 */
     /* padding:45px; */
     /* 패딩 값 2개 작성 시 -상하/좌우 방향 적용 */
-    padding:45px 15px;
     /* 패딩 값 3개 작성 시 -상/좌우/하 방향 적용 */
     /* padding:45px 15px 45px; */
     /* 패딩 값 3개 작성 시 -12/3/6/9 시계방향 적용 */
@@ -75,10 +77,13 @@
     color:#000;
 }
 /* =====================================main */
-#wrap > main {}
-/* =====================================main 1. 날짜~할 일 목록 리스트 */
+#wrap > main {
+    height:88%;
+    overflow:auto; 
+    /* 내용이 넘친 방향만 자도으로 스크롤을 만들고 나머지는 hidden 처리 */
+    }
+/* ===============================================main 1. 날짜~할 일 목록 리스트 */
 #wrap > main > .to_do_list {
-    background-color: yellow;
     display:flex;
     flex-flow:column-reverse nowrap;
     /* gap:10px; */
@@ -102,9 +107,17 @@
 }
 #wrap > main > .to_do_list > li > .date {font-weight:600;}
 #wrap > main > .to_do_list > li > .contents {}
-/* 3. 작성버튼 클릭 시 실행화면 */
+/* ============================================main 2. 작성버튼 */
+#wrap > main > .write_popup_btn {
+    display:block;
+    width:42px;
+/*  position:fixed; right:15px; bottom:45px; */
+    position:absolute; right:15px; bottom:45px;
+}
+#wrap > main > .write_popup_btn > img {width:100%;}
+/* ==================================================== main 3. 작성버튼 클릭 시 실행화면 */
 #wrap > main > .write_popup {
-    background-color: cornsilk;
+    background-color:#fff;
     display:flex;
     width:330px; height:250px;
     border-radius:10px;
@@ -112,6 +125,8 @@
     flex-flow:column nowrap;
     justify-content:space-between;
     /* align-items:flex-end;자식에게 모두 주고 싶은 경우 */
+    /* 팝업 실행된 화면 */
+    position:absolute; left:9%; top:36%;
 }
 #wrap > main > .write_popup > .info{
     font-family:'Noto Sans', 'pretendard';
